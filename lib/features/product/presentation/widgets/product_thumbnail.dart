@@ -24,11 +24,11 @@ class ProductThumbnail extends StatelessWidget {
       height: 227.71,
       child: Card(
         elevation: 0,
+        color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
           side: BorderSide(color: fgColor),
         ),
-        color: Colors.white,
         child: Column(
           children: [
             const SizedBox(height: Paddings.md),
@@ -88,7 +88,7 @@ class ProductThumbnail extends StatelessWidget {
 
     return Column(
       children: [
-        if (product.discountPrice == null) const SizedBox(height: 23),
+        if (product.discountPrice == null) const SizedBox(height: Paddings.sm),
         Stack(
           alignment: Alignment.center,
           children: [
@@ -121,8 +121,8 @@ class ProductThumbnail extends StatelessWidget {
               ),
           ],
         ),
-        const SizedBox(height: 4),
-        if (product.discountPrice != null)
+        if (product.discountPrice != null) ...[
+          const SizedBox(height: 4),
           Text(
             "${product.discountPrice}€/Month",
             style: const TextStyle(
@@ -131,6 +131,7 @@ class ProductThumbnail extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
+        ]
       ],
     );
   }

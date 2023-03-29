@@ -2,7 +2,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'i_storage.dart';
 
-final fakeStorageProvider = Provider<IStorage>((ref) {
+final fakeStorageProvider = Provider.autoDispose<IStorage>((ref) {
   return FakeStorage();
 });
 

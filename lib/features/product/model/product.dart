@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 class Product {
-  int id;
-  String name;
-  double price;
-  double? discountPrice;
-  Product({
+  final int id;
+  final String name;
+  final double price;
+  final double? discountPrice;
+  const Product({
     required this.id,
     required this.name,
     required this.price,

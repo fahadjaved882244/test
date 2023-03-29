@@ -5,7 +5,7 @@ import 'package:test/storage/i_storage.dart';
 
 import '../../../storage/fake_storage.dart';
 
-final productRepoProvider = Provider<IProductRepository>((ref) {
+final productRepoProvider = Provider.autoDispose<IProductRepository>((ref) {
   final storage = ref.watch(fakeStorageProvider);
   return ProductRepository(storage);
 });
